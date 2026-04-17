@@ -1,0 +1,31 @@
+{
+  "name": "park-conscious",
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "Events",
+    "AdminPanel"
+  ],
+  "scripts": {
+    "build": "mkdir -p public && cp *.html favicon.ico favicon.png public/ 2>/dev/null || true && cp -r assets scripts styles public/ 2>/dev/null || true && cp -r owner public/ 2>/dev/null || true && DISABLE_ESLINT_PLUGIN=true npm run build --workspaces",
+    "dev:backend": "node local-server.js"
+  },
+  "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
+    "babel-preset-react-app": "^10.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.14.0",
+    "bcryptjs": "^2.4.3",
+    "busboy": "^1.6.0",
+    "cloudinary": "^2.9.0",
+    "cookie": "^1.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "8.10.1",
+    "razorpay": "^2.9.6",
+    "resend": "^6.10.0"
+  }
+}
